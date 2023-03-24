@@ -100,7 +100,7 @@ app.get("/api/mahasiswa/:id", async (req, res) => {
   res.json(results.rows[0]);
 });
 const salt = await bcrypt.genSalt();
-const hash = await bcrypt.hash("1234", salt);
+const hash = await bcrypt.hash("nanda", salt);
 console.log(hash);
 
 // tambah
@@ -138,7 +138,7 @@ app.get("/api/pelatihan", async (_req, res) => {
 //logout
 app.post("/api/logout", (req, res) => {
   res.clearCookie(req.body.token);
-  res.redirect("/login");
+  res.redirect("/login"); 
 })
 
 app.listen(3000, () => {
